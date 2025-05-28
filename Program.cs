@@ -13,7 +13,7 @@ namespace SupportBank
 
             List<UserAccount> alluserAccounts = new List<UserAccount>();
          
-         
+            // SupportBank supportBankExample = new SupportBank(allNames, allTransactions);
 
 
             foreach (string name in allNames)
