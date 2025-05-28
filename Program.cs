@@ -11,10 +11,20 @@ namespace SupportBank
             List<TransactionData> allTransactions = ProcessTransactions();
             List<string> allNames = ProcessNames(allTransactions);
 
-            
-            foreach (string name in allNames){
-                Console.WriteLine(name);
+            List<UserAccount> alluserAccounts = new List<UserAccount>();
+         
+         
+
+
+            foreach (string name in allNames)
+            {
+                alluserAccounts.Add(new UserAccount(name, allTransactions));
             }
+
+            var testNameAccount = alluserAccounts.Find(account => account.AccountHolderName == "Ben B");
+            Console.WriteLine(testNameAccount.AccountHolderName);
+            Console.WriteLine(testNameAccount.BalanceToReceive);
+            Console.WriteLine(testNameAccount.BalanceToPay);
 
         }
 
