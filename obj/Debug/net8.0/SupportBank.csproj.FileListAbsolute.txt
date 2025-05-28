@@ -12,3 +12,4 @@ C:\Users\SatSre\training\C#\SupportBank\obj\Debug\net8.0\refint\SupportBank.dll
 C:\Users\SatSre\training\C#\SupportBank\obj\Debug\net8.0\SupportBank.pdb
 C:\Users\SatSre\training\C#\SupportBank\obj\Debug\net8.0\SupportBank.genruntimeconfig.cache
 C:\Users\SatSre\training\C#\SupportBank\obj\Debug\net8.0\ref\SupportBank.dll
+C:\Users\SatSre\training\C#\SupportBank\obj\Debug\net8.0\SupportBank.sourcelink.json
