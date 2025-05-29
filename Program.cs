@@ -2,14 +2,33 @@
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Transactions;
+using System.Globalization;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+
 
 
 namespace SupportBank
 {
     class Program
     {
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
+
+            var config = new LoggingConfiguration();
+            var target = new FileTarget { FileName = @"C:\Users\RacKel\Training\SupportBank\Logs\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+            config.AddTarget("File Logger", target);
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Info, target));
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Error, target));
+            LogManager.Configuration = config;
+
+
+            Logger.Info("Hello again");
+            // try
+            // {
             List<TransactionData> allTransactions = ProcessTransactions();
             List<string> allNames = ProcessNames(allTransactions);
             List<UserAccount> alluserAccounts = CreateUserAccounts(allNames, allTransactions);
@@ -23,14 +42,22 @@ namespace SupportBank
             Console.WriteLine("(1) List All");
             Console.WriteLine("(2) List [Account]");
             string userChoice = Console.ReadLine();
-            if (userChoice == "1") {
+            if (userChoice == "1")
+            {
                 report1.ListAllTransactions();
-            } else if (userChoice == "2") {
+            }
+            else if (userChoice == "2")
+            {
                 Console.WriteLine("Enter the account holder name : ");
                 string name = Console.ReadLine();
                 report1.ListAccountTransactions(name);
             }
         }
+            // catch (System.FormatException ex)
+            // {
+            //     Logger.Error(ex.Message);
+            // }
+        // }
 
         public static List<UserAccount> CreateUserAccounts(List<string> allNames, List<TransactionData> allTransactions)
         {
@@ -48,7 +75,7 @@ namespace SupportBank
         public static List<TransactionData> ProcessTransactions()
         {
             List<TransactionData> allTransactionsList = new List<TransactionData>();
-            string filePath = "./Transactions2014.csv";
+            string filePath = "./DodgyTransactions2015.csv";
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string line;
@@ -56,11 +83,20 @@ namespace SupportBank
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] values = line.Split(',');
-                    allTransactionsList.Add(new TransactionData(values[0], values[1], values[2], values[3], values[4]));
+                    DateTime parsedDate;
+                    float parsedAmount;
+                    if (DateTime.TryParseExact(values[0], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) && float.TryParse(values[4], out parsedAmount))
+                    {
+                        allTransactionsList.Add(new TransactionData(parsedDate, values[1], values[2], values[3], parsedAmount));
+                    
+                    }
                 }
             }
             return allTransactionsList;
         }
+
+                                    // if (DateTime.TryParseExact(transactionDate, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None,  out parsedDate)) TransactionDate = parsedDate;
+                // if (Float.TryParse(transactionAmount))
 
         public static List<string> ProcessNames(List<TransactionData> allTransactions)
         {

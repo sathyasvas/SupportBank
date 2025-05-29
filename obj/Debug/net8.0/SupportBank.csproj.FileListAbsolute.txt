@@ -28,3 +28,14 @@ C:\Users\RacKel\Training\SupportBank\obj\Debug\net8.0\refint\SupportBank.dll
 C:\Users\RacKel\Training\SupportBank\obj\Debug\net8.0\SupportBank.pdb
 C:\Users\RacKel\Training\SupportBank\obj\Debug\net8.0\SupportBank.genruntimeconfig.cache
 C:\Users\RacKel\Training\SupportBank\obj\Debug\net8.0\ref\SupportBank.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\NLog.dll
+C:\Users\RacKel\Training\SupportBank\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\Users\RacKel\Training\SupportBank\obj\Debug\net8.0\SupportBank.csproj.AssemblyReference.cache
+C:\Users\RacKel\Training\SupportBank\obj\Debug\net8.0\SupportB.540BFCCB.Up2Date

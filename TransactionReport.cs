@@ -1,9 +1,13 @@
 using System;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace SupportBank 
 {
     public class TransactionReport
     {
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         public List<UserAccount> UserAccounts { get; private set; }
 
         public TransactionReport(List<UserAccount> alluserAccounts)
