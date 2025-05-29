@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SatSre\\training\\C#\\SupportBank\\SupportBank.csproj": {}
+    "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SatSre\\training\\C#\\SupportBank\\SupportBank.csproj": {
+    "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SatSre\\training\\C#\\SupportBank\\SupportBank.csproj",
+        "projectUniqueName": "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj",
         "projectName": "SupportBank",
-        "projectPath": "C:\\Users\\SatSre\\training\\C#\\SupportBank\\SupportBank.csproj",
-        "packagesPath": "C:\\Users\\SatSre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SatSre\\training\\C#\\SupportBank\\obj\\",
+        "projectPath": "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj",
+        "packagesPath": "C:\\Users\\RacKel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RacKel\\Training\\SupportBank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SatSre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\RacKel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
