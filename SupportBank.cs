@@ -5,17 +5,12 @@ namespace SupportBank
     public class SupportBank {
         public List<UserAccount> UserAccounts {get; private set;}
 
-        public SupportBank(List<string> allNames, List<TransactionData> allTransactions)
+        public SupportBank(List<UserAccount> alluserAccounts)
         {
-            UserAccounts = new List<UserAccount>();
-            List<UserAccount> userLists = new List<UserAccount>();
-            
-            foreach (string name in allNames)
-            {
-                userLists.Add(new UserAccount(name, allTransactions));
-            }
-            UserAccounts = userLists;
+            this.UserAccounts = alluserAccounts;
         }
+
+        // More methods
 
     }
 
