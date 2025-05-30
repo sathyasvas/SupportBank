@@ -20,9 +20,9 @@ namespace SupportBank
         
         public void ListAccountTransactions(string accountHolderName)
         {
-            var testNameAccount = UserAccounts.Find(account => account.AccountHolderName == accountHolderName);
+            var testNameAccount = UserAccounts.Find(account => account.AccountHolderName.ToLower() == accountHolderName.ToLower());
             Console.WriteLine("--------------------------------------------------------");
-            Console.WriteLine("Transaction Details for the account holder : " + accountHolderName);
+            Console.WriteLine("Transaction Details for the account holder : " + testNameAccount.AccountHolderName);
             Console.WriteLine("--------------------------------------------------------");
             foreach (TransactionData incomingTransaction in testNameAccount.IncomingTransactionHistory)
             {

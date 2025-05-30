@@ -6,6 +6,7 @@ using System.Globalization;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
+using System.Linq;
 
 
 
@@ -26,38 +27,38 @@ namespace SupportBank
             LogManager.Configuration = config;
 
 
-            Logger.Info("Hello again");
-            // try
-            // {
-            List<TransactionData> allTransactions = ProcessTransactions();
-            List<string> allNames = ProcessNames(allTransactions);
-            List<UserAccount> alluserAccounts = CreateUserAccounts(allNames, allTransactions);
-            TransactionReport report1 = new TransactionReport(alluserAccounts);
+            Logger.Info("Programme started");
+            try
+            {
+                List<TransactionData> allTransactions = ProcessTransactions();
+                List<string> allNames = ProcessNames(allTransactions);
+                List<UserAccount> alluserAccounts = CreateUserAccounts(allNames, allTransactions);
+                TransactionReport report1 = new TransactionReport(alluserAccounts);
 
-            Console.WriteLine("------------------------");
-            Console.WriteLine("Welcome to Support Bank");
-            Console.WriteLine("------------------------");
-            Console.WriteLine("Choose 1 or 2 : ");
-            Console.WriteLine();
-            Console.WriteLine("(1) List All");
-            Console.WriteLine("(2) List [Account]");
-            string userChoice = Console.ReadLine();
-            if (userChoice == "1")
-            {
-                report1.ListAllTransactions();
+                Console.WriteLine("------------------------");
+                Console.WriteLine("Welcome to Support Bank");
+                Console.WriteLine("------------------------");
+                Console.WriteLine("Choose 1 or 2 : ");
+                Console.WriteLine();
+                Console.WriteLine("(1) List All");
+                Console.WriteLine("(2) List [Account]");
+                string userChoice = CheckChoice();
+                if (userChoice == "1")
+                {
+                    report1.ListAllTransactions();
+                }
+                else if (userChoice == "2")
+                {
+                    Console.WriteLine("Enter the account holder name:  e.g. Tim L ");
+                    string name = EnterName(allNames);
+                    report1.ListAccountTransactions(name);
+                }
             }
-            else if (userChoice == "2")
+            catch (Exception ex)
             {
-                Console.WriteLine("Enter the account holder name : ");
-                string name = Console.ReadLine();
-                report1.ListAccountTransactions(name);
+                Logger.Error(ex.Message);
             }
         }
-            // catch (System.FormatException ex)
-            // {
-            //     Logger.Error(ex.Message);
-            // }
-        // }
 
         public static List<UserAccount> CreateUserAccounts(List<string> allNames, List<TransactionData> allTransactions)
         {
@@ -69,7 +70,7 @@ namespace SupportBank
             }
             return allUserAccountsList;
         }
-        
+
 
         // Utility Methods
         public static List<TransactionData> ProcessTransactions()
@@ -88,15 +89,12 @@ namespace SupportBank
                     if (DateTime.TryParseExact(values[0], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) && float.TryParse(values[4], out parsedAmount))
                     {
                         allTransactionsList.Add(new TransactionData(parsedDate, values[1], values[2], values[3], parsedAmount));
-                    
+
                     }
                 }
             }
             return allTransactionsList;
         }
-
-                                    // if (DateTime.TryParseExact(transactionDate, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None,  out parsedDate)) TransactionDate = parsedDate;
-                // if (Float.TryParse(transactionAmount))
 
         public static List<string> ProcessNames(List<TransactionData> allTransactions)
         {
@@ -110,6 +108,42 @@ namespace SupportBank
             return allNamesList;
         }
 
-    }
+        public static string EnterName(List<string> allNames)
+        {
+            bool enteredName = false;
+            List<string> lowerCaseNames = allNames.ConvertAll(name => name.ToLower());
+            string name = "";
+            while (!enteredName)
+            {
+                name = Console.ReadLine();
+                if (lowerCaseNames.Contains(name.ToLower()))
+                {
+                    enteredName = true;
+                    break;
+                }
+                Console.WriteLine("Please enter a valid name: ");
+            }
+            return name;
+        }
 
+        public static string CheckChoice()
+        {
+            bool enteredChoice = false;
+            string userChoice = "";
+            while (!enteredChoice)
+            {
+                userChoice = Console.ReadLine();
+                if (userChoice == "1" || userChoice == "2")
+                {
+                    enteredChoice = true;
+                    break;
+                }
+                Console.WriteLine("Please enter a valid option: 1 or 2!");
+
+            }
+            return userChoice;
+
+        }
+
+    }
 }
