@@ -53,3 +53,38 @@
 2025-05-30 11:33:49.4914 Info - SupportBank.Program: User chose report option 1
 2025-05-30 11:33:49.5078 Info - SupportBank.Program: All transactions printed
 2025-05-30 11:33:49.5078 Info - SupportBank.Program: Programme ended
+2025-05-30 11:45:21.4292 Info - SupportBank.Program: Programme started
+2025-05-30 11:45:21.6054 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+2025-05-30 11:45:21.6054 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: Last Thursday,Sarah T,Dan W,Beers,5.42
+2025-05-30 11:45:21.6054 Info - SupportBank.CsvProcessor: The csv file has been read
+2025-05-30 11:45:28.2967 Info - SupportBank.Program: User chose report option 1
+2025-05-30 11:45:28.3119 Info - SupportBank.Program: All transactions printed
+2025-05-30 11:45:28.3119 Info - SupportBank.Program: Programme ended
+2025-05-30 11:45:32.0277 Info - SupportBank.Program: Programme started
+2025-05-30 11:45:32.0683 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+2025-05-30 11:45:32.0683 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: Last Thursday,Sarah T,Dan W,Beers,5.42
+2025-05-30 11:45:32.0683 Info - SupportBank.CsvProcessor: The csv file has been read
+2025-05-30 11:45:34.7181 Info - SupportBank.Program: User chose report option 2
+2025-05-30 11:45:38.4770 Info - SupportBank.Program: printed transactions for tim l
+2025-05-30 11:45:38.4770 Info - SupportBank.Program: Programme ended
+2025-05-30 11:46:50.8828 Info - SupportBank.Program: Programme started
+2025-05-30 11:46:50.9378 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+2025-05-30 11:46:50.9378 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: Last Thursday,Sarah T,Dan W,Beers,5.42
+2025-05-30 11:46:50.9378 Info - SupportBank.CsvProcessor: The csv file has been read
+2025-05-30 11:46:56.1999 Info - SupportBank.Program: User chose report option 2
+2025-05-30 11:46:58.5319 Info - SupportBank.Program: printed transactions for tim l
+2025-05-30 11:46:58.5319 Info - SupportBank.Program: Programme ended
+2025-05-30 11:47:09.5968 Info - SupportBank.Program: Programme started
+2025-05-30 11:47:09.6397 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+2025-05-30 11:47:09.6397 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: Last Thursday,Sarah T,Dan W,Beers,5.42
+2025-05-30 11:47:09.6397 Info - SupportBank.CsvProcessor: The csv file has been read
+2025-05-30 11:47:11.3849 Info - SupportBank.Program: User chose report option 1
+2025-05-30 11:47:11.4013 Info - SupportBank.Program: All transactions printed
+2025-05-30 11:47:11.4013 Info - SupportBank.Program: Programme ended
+2025-05-30 11:47:15.4297 Info - SupportBank.Program: Programme started
+2025-05-30 11:47:15.4725 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: 01/03/2015,Ben B,Sam N,Lunch,One Cheeseburger
+2025-05-30 11:47:15.4725 Info - SupportBank.CsvProcessor: This information was not processed as a transaction: Last Thursday,Sarah T,Dan W,Beers,5.42
+2025-05-30 11:47:15.4725 Info - SupportBank.CsvProcessor: The csv file has been read
+2025-05-30 11:47:19.6049 Info - SupportBank.Program: User chose report option 2
+2025-05-30 11:47:21.9416 Info - SupportBank.Program: printed transactions for ben b
+2025-05-30 11:47:21.9416 Info - SupportBank.Program: Programme ended
