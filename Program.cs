@@ -19,7 +19,10 @@ namespace SupportBank
         {
 
             var config = new LoggingConfiguration();
-            var target = new FileTarget { FileName = @"C:\Users\RacKel\Training\SupportBank\Logs\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+            var logsDir = Path.Combine(Directory.GetCurrentDirectory(), "logs");
+            Directory.CreateDirectory(logsDir);
+            var logPath = Path.Combine(logsDir, "SupportBank.log");
+            var target = new FileTarget { FileName = logPath, Layout = @"${longdate} ${level} - ${logger}: ${message}" };
             config.AddTarget("File Logger", target);
             config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
             config.LoggingRules.Add(new LoggingRule("*", LogLevel.Info, target));
@@ -30,14 +33,16 @@ namespace SupportBank
             Logger.Info("Programme started");
             try
             {
-                List<TransactionData> allTransactions = CsvProcessor.ProcessTransactions();
-                List<string> allNames = CsvProcessor.ProcessNames(allTransactions);
-                List<UserAccount> alluserAccounts = CreateUserAccounts(allNames, allTransactions);
-                TransactionReport report1 = new TransactionReport(alluserAccounts);
-
                 Console.WriteLine("------------------------");
                 Console.WriteLine("Welcome to Support Bank");
                 Console.WriteLine("------------------------");
+                Console.WriteLine("Choose file: 2012, 2013, 2014, 2015");
+                string filePath = ChooseFile();
+                List<TransactionData> allTransactions = FileProcessor.ProcessTransactions(filePath);
+                List<string> allNames = FileProcessor.ProcessNames(allTransactions);
+                List<UserAccount> alluserAccounts = CreateUserAccounts(allNames, allTransactions);
+                TransactionReport report1 = new TransactionReport(alluserAccounts);
+
                 Console.WriteLine("Choose 1 or 2 : ");
                 Console.WriteLine();
                 Console.WriteLine("(1) List All");
@@ -73,6 +78,28 @@ namespace SupportBank
                 allUserAccountsList.Add(new UserAccount(accountname, allTransactions));
             }
             return allUserAccountsList;
+        }
+
+        public static string ChooseFile()
+        {
+            bool enteredYear = false;
+            string[] validYears = { "2012", "2013", "2014", "2015" };
+            string name = "";
+            while (!enteredYear)
+            {
+                name = Console.ReadLine();
+                if (validYears.Contains(name))
+                {
+                    enteredYear = true;
+                    break;
+                }
+                Console.WriteLine("Choose valid file: 2012, 2013, 2014, 2015");
+            }
+            if (name == "2012") return "./Transactions2012.xml";
+            if (name == "2013") return "./Transactions2013.json";
+            if (name == "2014") return "./Transactions2014.csv";
+            if (name == "2015") return "./DodgyTransactions2015.csv";
+            return "./DodgyTransactions2015.csv";
         }
 
         // Validation Methods

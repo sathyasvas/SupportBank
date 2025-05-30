@@ -27,7 +27,7 @@ namespace SupportBank
             foreach (TransactionData incomingTransaction in testNameAccount.IncomingTransactionHistory)
             {
                 Console.Write("Date      : ");
-                Console.WriteLine(incomingTransaction.TransactionDate);
+                Console.WriteLine(incomingTransaction.TransactionDate.ToShortDateString());
                 Console.Write("Owed From : ");
                 Console.WriteLine(incomingTransaction.TransactionFrom);
                 Console.Write("Narrative : ");
@@ -39,7 +39,7 @@ namespace SupportBank
             foreach (TransactionData outgoingTransaction in testNameAccount.OutgoingTransactionHistory)
             {
                 Console.Write("Date      : ");
-                Console.WriteLine(outgoingTransaction.TransactionDate);
+                Console.WriteLine(outgoingTransaction.TransactionDate.ToShortDateString());
                 Console.Write("Owes To   : ");
                 Console.WriteLine(outgoingTransaction.TransactionTo);
                 Console.Write("Narrative : ");

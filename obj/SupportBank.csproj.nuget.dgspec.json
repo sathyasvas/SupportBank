@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj": {}
+    "C:\\Users\\HanDun\\Documents\\TechSwitch\\Training\\SupportBank\\SupportBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj": {
+    "C:\\Users\\HanDun\\Documents\\TechSwitch\\Training\\SupportBank\\SupportBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj",
+        "projectUniqueName": "C:\\Users\\HanDun\\Documents\\TechSwitch\\Training\\SupportBank\\SupportBank.csproj",
         "projectName": "SupportBank",
-        "projectPath": "C:\\Users\\RacKel\\Training\\SupportBank\\SupportBank.csproj",
-        "packagesPath": "C:\\Users\\RacKel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RacKel\\Training\\SupportBank\\obj\\",
+        "projectPath": "C:\\Users\\HanDun\\Documents\\TechSwitch\\Training\\SupportBank\\SupportBank.csproj",
+        "packagesPath": "C:\\Users\\HanDun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HanDun\\Documents\\TechSwitch\\Training\\SupportBank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\RacKel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\HanDun\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -43,13 +43,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "NLog": {
+            "Json.Net": {
               "target": "Package",
-              "version": "[5.5.0, )"
+              "version": "[1.0.33, )"
             },
             "NLog.Extensions.Logging": {
               "target": "Package",
               "version": "[5.5.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
