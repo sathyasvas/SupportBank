@@ -43,21 +43,25 @@ namespace SupportBank
                 Console.WriteLine("(1) List All");
                 Console.WriteLine("(2) List [Account]");
                 string userChoice = CheckChoice();
+                Logger.Info($"User chose report option {userChoice}");
                 if (userChoice == "1")
                 {
                     report1.ListAllTransactions();
+                    Logger.Info("All transactions printed");
                 }
                 else if (userChoice == "2")
                 {
                     Console.WriteLine("Enter the account holder name:  e.g. Tim L ");
                     string name = EnterName(allNames);
                     report1.ListAccountTransactions(name);
+                    Logger.Info($"printed transactions for {name}");
                 }
             }
             catch (Exception ex)
             {
                 Logger.Error(ex.Message);
             }
+            Logger.Info("Programme ended");
         }
 
         public static List<UserAccount> CreateUserAccounts(List<string> allNames, List<TransactionData> allTransactions)
@@ -91,8 +95,14 @@ namespace SupportBank
                         allTransactionsList.Add(new TransactionData(parsedDate, values[1], values[2], values[3], parsedAmount));
 
                     }
+                    else
+                    {
+                        Logger.Info("This information was not processed as a transaction: " + line);
+                    }
                 }
+              
             }
+            Logger.Info("The csv file has been read");
             return allTransactionsList;
         }
 
